@@ -628,7 +628,7 @@
             ],
             '5.3',
             [
-                { q: '以下不正确的if语句形式是（  ）', opts: 'A. if(x>y&&x!=y)\nB. if(x==y) x+=y\nC. if(x!=y) scanf("%d",&x); else scanf("%d",&y);\nD. if(x&lt;y) {x++;y++;}', ans: 'B' }
+                { q: '以下不正确的if语句形式是（  ）', opts: 'A. if(x>y&&x!=y);\nB. if(x==y) x+=y;\nC. if(x!=y) scanf("%d",&x) else scanf("%d",&y);\nD. if(x&lt;y) {x++;y++;}', ans: 'C。C 中 scanf("%d",&x) 后缺少分号，导致 else 前语法错误，所以不正确。' }
             ]
         );
 
@@ -645,7 +645,7 @@
             ],
             '5.3',
             [
-                { q: '已知int x=6，y=4，z=5，执行以下语句后，能正确表示x，y，z值的选项是（  ）\nif(x&lt;y){z=x;x=y;y=z;}', opts: 'A. x=4,y=5,z=6\nB. x=4,y=6,z=6\nC. x=4,y=5,z=5\nD. x=5,y=6,z=4', ans: 'A' }
+                { q: '已知int x=6，y=4，z=5，执行以下语句后，能正确表示x，y，z值的选项是（  ）\nif(x&lt;y){z=x;x=y;y=z;}', opts: 'A. x=4,y=5,z=6\nB. x=6,y=4,z=5\nC. x=4,y=5,z=5\nD. x=5,y=6,z=4', ans: 'B。x&lt;y 即 6&lt;4 为假，if 块不执行，所以 x=6,y=4,z=5，选 B。' }
             ]
         );
 
@@ -661,7 +661,7 @@
             ],
             '5.3',
             [
-                { q: '以下程序的运行结果是（  ）\nmain(){int n; scanf("%d",&n); if(n++<5) printf("%d\\n",n); else printf("%d\\n",n--);}\n若输入9，则输出结果是（  ）', opts: 'A. 11\nB. A\nC. 9\nD. 8', ans: 'B' }
+                { q: '以下程序的运行结果是（  ）\nmain(){int n; scanf("%d",&n); if(n++&lt;5) printf("%X\\n",n); else printf("%X\\n",n--);}\n若输入9，则输出结果是（  ）', opts: 'A. 11\nB. A\nC. 9\nD. 8', ans: 'B。输入9时，n++&lt;5 为假且 n 变为10，else 中 n-- 先输出10的十六进制 A，选 B。' }
             ]
         );
 
@@ -771,7 +771,7 @@
             ],
             '5.3',
             [
-                { q: '有以下程序：\nmain(){int a=2,b=1,c=2; if(b&lt;a) if(b<0)c=0; else c++; b++; printf("b=%d,c=%d\\n",b,c);}\n程序的输出结果是（  ）', opts: 'A. b=1,c=2\nB. b=2,c=2\nC. b=1,c=0\nD. b=1,c=1', ans: 'B' }
+                { q: '有以下程序：\nmain(){int a=2,b=1,c=2; if(b&lt;a) if(b&lt;0)c=0; else c++; b++; printf("b=%d,c=%d\\n",b,c);}\n程序的输出结果是（  ）', opts: 'A. b=1,c=2\nB. b=2,c=3\nC. b=1,c=0\nD. b=1,c=1', ans: 'B。b&lt;a 为真，b&lt;0 为假，执行 else c++ 使 c=3，再 b++ 使 b=2，输出 b=2,c=3，选 B。' }
             ]
         );
 
@@ -790,7 +790,7 @@
             ],
             '5.3',
             [
-                { q: '执行下列程序后，变量k的值是（  ）\nmain(){int k=8; switch(k){ case 9:k+=1; case 10:k+=1; case 11:k+=1;break; default:k+=1;} printf("%d\\n",k);}', opts: 'A. 12\nB. 11\nC. 10\nD. 9', ans: 'D' }
+                { q: '执行下列程序后，变量k的值是（  ）\nmain(){int k=8; switch(k){ case 9:k+=1; case 10:k+=1; case 11:k+=1;break; default:k+=1;} printf("%d\\n",k);}', opts: 'A. 12\nB. 11\nC. 10\nD. 9', ans: 'D。k=8 无匹配 case，执行 default 后 k=9，选 D。' }
             ]
         );
 
@@ -863,8 +863,8 @@
             ],
             '5.4',
             [
-                { q: '以下程序段的输出结果是（  ）\nint num=0; while(num<=2){num++; printf("%d",num);}', opts: 'A. 1\nB. 12\nC. 123\nD. 1234', ans: 'C' },
-                { q: 'C语言中while和do-while循环的主要区别是（  ）', opts: 'A. do-while的循环体至少无条件执行一次\nB. while的循环控制条件比do-while的循环控制条件严格\nC. do-while允许从外部转到循环体内\nD. do-while的循环体不能是复合语句', ans: 'A' }
+                { q: '以下程序段的输出结果是（  ）\nint num=0; while(num&lt;=2){num++; printf("%d",num);}', opts: 'A. 1\nB. 12\nC. 123\nD. 1234', ans: 'C。num 从0递增，依次输出1、2、3后为3不满足条件，输出123，选 C。' },
+                { q: 'C语言中while和do-while循环的主要区别是（  ）', opts: 'A. do-while的循环体至少无条件执行一次\nB. while的循环控制条件比do-while的循环控制条件严格\nC. do-while允许从外部转到循环体内\nD. do-while的循环体不能是复合语句', ans: 'A。do-while先执行后判断，循环体至少执行一次；while先判断后执行，可能一次都不执行，选A。' }
             ]
         );
 
@@ -881,7 +881,7 @@
             ],
             '5.4',
             [
-                { q: '语句while(!e);中的条件!e等价于（  ）', opts: 'A. e==0\nB. e!=1\nC. e!=0\nD. ~e', ans: 'A' }
+                { q: '语句while(!e);中的条件!e等价于（  ）', opts: 'A. e==0\nB. e!=1\nC. e!=0\nD. ~e', ans: 'A。!e 为真当且仅当 e 为 0，所以等价于 e==0，选 A。' }
             ]
         );
 
@@ -1122,7 +1122,7 @@
             ],
             '5.4',
             [
-                { q: '以下程序段（  ）\nint x=-1; do{ x=x*x; }while(!x);', opts: 'A. 是死循环\nB. 循环执行二次\nC. 循环执行一次\nD. 有语法错误', ans: 'C' }
+                { q: '以下程序段（  ）\nint x=-1; do{ x=x*x; }while(!x);', opts: 'A. 是死循环\nB. 循环执行二次\nC. 循环执行一次\nD. 有语法错误', ans: 'C。x=-1 执行一次后变为 1，!x 为假退出循环，所以循环执行一次，选 C。' }
             ]
         );
 
@@ -1159,7 +1159,7 @@
             ],
             '5.4',
             [
-                { q: '下面有关for循环的正确描述是（  ）', opts: 'A. for循环只能用于循环次数已经确定的情况\nB. for循环是先执行循环体语句，后判定表达式\nC. 在for循环中，不能用break语句跳出循环体\nD. for循环体语句中，可以包含多条语句，但要用花括号括起来', ans: 'D' }
+                { q: '下面有关for循环的正确描述是（  ）', opts: 'A. for循环只能用于循环次数已经确定的情况\nB. for循环是先执行循环体语句，后判定表达式\nC. 在for循环中，不能用break语句跳出循环体\nD. for循环体语句中，可以包含多条语句，但要用花括号括起来', ans: 'D。for循环体可包含多条语句，需用花括号括起来，选D。' }
             ]
         );
 
@@ -1272,7 +1272,7 @@
             ],
             '5.5',
             [
-                { q: 'C语言中，以下语句能跳过循环体中未执行的语句，接着执行本循环下一次迭代的语句是（  ）', opts: 'A. 空语句\nB. break语句\nC. return语句\nD. continue语句', ans: 'D' }
+                { q: 'C语言中，以下语句能跳过循环体中未执行的语句，接着执行本循环下一次迭代的语句是（  ）', opts: 'A. 空语句\nB. break语句\nC. return语句\nD. continue语句', ans: 'D。continue 跳过本次循环剩余语句，直接进入下一次迭代，选 D。' }
             ]
         );
 
